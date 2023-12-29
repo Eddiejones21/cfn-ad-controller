@@ -1,7 +1,7 @@
 [
     {
-        "ParameterKey": "VpcId",
-        "ParameterValue": "vpc-0f151c7b0689cc1ee"
+      "ParameterKey": "VpcId",
+      "ParameterValue": "vpc-0f151c7b0689cc1ee"
     },
     {
         "ParameterKey": "SubnetIDs",
@@ -21,6 +21,6 @@
     },
     {
         "ParameterKey": "RouteTable",
-        "ParameterValue": "rtb-009e0f2a116fb3936"
+        "ParameterValue": "rtb-088c0108274494954"
     }
 ]
