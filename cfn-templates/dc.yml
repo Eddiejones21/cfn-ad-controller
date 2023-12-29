@@ -115,4 +115,31 @@ Resources:
         - !Sub arn:${AWS::Partition}:iam::aws:policy/AWSCloudFormationReadOnlyAccess
         - !Sub arn:${AWS::Partition}:iam::aws:policy/AmazonEC2FullAccess
 
-        
+  EC2InstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      Path: '/'
+      Roles:
+        - !Ref EC2InstanceRole
+
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable RDP access
+      SecurityGroupIngress:
+        - IpProtocol: -1
+          FromPort: '-1'
+          ToPort: '-1'
+          CidrIp: !Ref RDPLocation
+
+Outputs:
+  InstanceSecurityGroup:
+    Description: Windows Server Security Group
+    Value: !Ref InstanceSecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-InstanceSecurityGroup"
+  EC2InstanceProfile:
+    Description: Windows ec2 Instance Profile
+    Value: !Ref EC2InstanceProfile
+    Export:
+      Name: !Sub "${AWS::StackName}-EC2InstanceProfile"        
