@@ -22,6 +22,11 @@ The purpose of this repository is to document the manual and programmatic (Cloud
     - Created this GitHub repository
     - Built out the CFN template to deploy the following Resources:
         - 1 Windows EC2 Instance (ami-06938c7701be658b4)
+        - IAM roles
+        - Instance profile
+        - Security groups
+
+
         
 
         
