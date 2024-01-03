@@ -6,9 +6,6 @@ Parameters:
   ImageId:
     Description: AMI ID
     Type: AWS::EC2::Image::Id
-  Linux:
-    Description: AMI ID
-    Type: AWS::EC2::Image::Id
   InstanceType:
     Description: Server EC2 instance type
     Type: String
@@ -76,24 +73,6 @@ Resources:
             </powershell>
             <persist>true</persist>
             #Still need to edit local group policy to get this working out the box
-  
-  LinuxEC2Instance:
-    Type: 'AWS::EC2::Instance'
-    Properties:
-      KeyName: "lab"
-      ImageId: !Ref Linux
-      SecurityGroups:
-        - !Ref InstanceSecurityGroup   
-      IamInstanceProfile: !Ref EC2InstanceProfile
-      InstanceType: !Ref InstanceType   
-      UserData:
-        Fn::Base64: !Sub |
-          #!/bin/bash
-          yum update -y
-          yum install samba -y
-      Tags:
-        - Key: "Name"
-          Value: "Linux_Node"        
 
   EC2InstanceRole:
     Type: 'AWS::IAM::Role'

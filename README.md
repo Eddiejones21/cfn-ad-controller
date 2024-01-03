@@ -19,6 +19,10 @@ The purpose of this repository is to document the manual and programmatic (Cloud
         - I opened the active directory computers and users tools and added a new user to the domain admin group
 
 ### 2. Infrastructure as Code:
+    - Created this GitHub repository
+    - Built out the CFN template to deploy the following Resources:
+        - 1 Windows EC2 Instance (ami-06938c7701be658b4)
+        
 
         
 
