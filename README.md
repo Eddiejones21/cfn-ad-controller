@@ -25,6 +25,10 @@ The purpose of this repository is to document the manual and programmatic (Cloud
         - IAM roles
         - Instance profile
         - Security groups
+    -Built out the parameters file specifying the following:
+        - Subnets 
+        - VPC
+        
 
 
         
